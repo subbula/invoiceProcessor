@@ -1,0 +1,13 @@
+{
+  "boxAppSettings": {
+    "clientID": "yvk79ucl4ody52ldkp1p0dpahoqn0zhr",
+    "clientSecret": "DX3po7Qxwpp2xPia4wlJSnuDvA5PXHGo",
+    "appAuth": {
+      "publicKeyID": "e40jdynz",
+      "privateKey": "-----BEGIN ENCRYPTED PRIVATE KEY-----\nMIIFDjBABgkqhkiG9w0BBQ0wMzAbBgkqhkiG9w0BBQwwDgQI1Nk38mzE84UCAggA\nMBQGCCqGSIb3DQMHBAhQYmgNFjdyygSCBMiT9wvofrLFVuADc/4XtXKSN8DIyg2G\nN6CoynGn4HvgoN7OJvXWM0YUsNhc1sp4ONZ8zPcRw4xTQzK2H0HL1R0ofj97NGyO\ngYEDRPZNvmTcL88+z0X3zmPYJW0D9n6ZpMn0pEz/QM9ZbxGgNIjL4rHbnzzqnqBF\nLq/RNFcDHs6P+b9k0HfIuhuf7lnguoxwyq7qUAZFy4wm+32/2gBLs5H+Sd79wgv1\nAtcZHc4dTz/vGFkMLfz1LAfMuPyW34v8TChSVO6eYKQLVhWNo/F6JxxlFfVZ7fXw\ncDhwvivQz5aLH9fc0ynsurtISHYg5ujAuZuVkBOcbiggEf0GJk8ms9uMGbHzW1tu\nsnjFoJCBdS1IGB0p+jlSAiYCd1jQInkjCgIdUjqg081QbTBcsMGXH7D8kU3hZuLn\n1khwetbkW/kS5iNmkA+q3ZXHSLnOFD7r3JbOmoo4gOIoN2yECo79sJqcYb+coKOt\n7XUFMRyh2mXwm6kMNg32PLtmxX8Ez7G+YgDdiIrYFV9764gD5bEsLhy6CAA/Nhnr\n+HWqbXgEVUbzvuUG5pfTQDRDix0+F9rG+PgdhYBKNkWK5s0v9+oL7s5DmN1ldegI\nD9QMwq+2oDkY7lULHRPHLWYej91MSmjVgYzvIlNRoSXQGgmXtZGbW1JfObl68SeG\nBv3h6F8qlCipmfiHaDogVlv6pkjctePDxrYS7nOuFChkn35HqoYUk7DWlzpFF7ed\n6FTwJRLKhdQKRo1FyuGjtHG0s28w5pA3N/tXMXxvR6VaJ8pX8Gyt10Z83Hqxbonx\nc3KQ34xOyysYUUvJ+vGqcjiU1MPcPe6Agi8b6h/sTGBrlwXZzmyFIEQs9hCM8ASs\npX5JLtc8hvCc4Kl6AFHff9csiV0Mg9pvr6Gdeh+/8Agw0CaBuv86G4p1zK/2YnTJ\nMf9WEf9R6GoZkux/GThvLuB1Q6UNkwYlePZM+vaQnwUlf5Bw+r3WBoJL1UivDG3P\n4KzCHGuaiOcphtjR72zpA3iWC8OhtfilhXyFsOaQKeG2twYETV7fY1rP7/gSRCtB\nBOrQdTKKZ+zsWucIB8lcgafAUQAvzyCUQBPNpGVD7cyuHhcqh/hLAbC0l6tdTITs\nOdVpd4slv4oYAGrpPRIq/VoE9A5arcMH69VkO5MUBlW1qSEI1wzv51tUAj1lCIUz\n5mPC5d71PXK51+ftPREVKoj6vTxQZmvTufzyeIpn69geoUySvN3TWGEdddYFa+sO\nbPWeJR9giDljtoQfEy+md8l9BZYToRc3RzdUe4SD5eOGBAvHCNVOFKRXG6hoxx8i\n7btoQv+P6qu80h14z74OMVzukIUvimo0W1x0qbbTaDIHQBCh7q6k4rK9K8rQNpUw\nOHAZA4q19vTFqgxp6MzPLeVJnzFlxcebMSTGaJd7wHICgDthi3iz0g/4i0ZIDI91\nFFFme4IfripCgHqq2Si07eqWXmZ+JvcgcyNAXPS0uS/Ct7PCVeEzPbtYqOhOJKag\nAKdkyk2YOJAoJP0soLW1OMgKxrKkTHhymxELFCez0LIdND58a1IMbLFg4Xe/GIuf\n9y4XqD0e2hrIUqlnXARs2Ukj1SJ2w0BTorWqO3FSSiEPBag0o3B0C5fHcjdzXGfm\nZlo=\n-----END ENCRYPTED PRIVATE KEY-----\n",
+      "passphrase": "4ac7e0839ef4dc936ea1244648fc85c9",
+      "enterprise": "455328"
+    },
+    "enterpriseID": "455328"
+  }
+}

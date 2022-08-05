@@ -1,0 +1,15 @@
+{
+  "mail-smtp-detail" : { "host" : "smtp-mail.outlook.com", "port" : 587, "user" : "iap_platform_31@outlook.com", "pass" : "ibm@123456"},
+  "mail-smtp-detail-ibm" : { "host" : "emea.relay.ibm.com", "port" : 25, "user" : "abc@in.ibm.com", "pass" : "abc"},
+  "filter_user" : ["Platform"],
+  "boxAppSettings": {"clientID": "55xtybll6zvjo1s0q4shsz7yzhffcotc",
+          "clientSecret": "UPd86CHtQ0jkrd3F2av6kgkTA89EIYVx",
+          "appAuth": {
+                      "publicKeyID": "m2gihsfm",
+                      "privateKey": "-----BEGIN ENCRYPTED PRIVATE KEY-----\nMIIFDjBABgkqhkiG9w0BBQ0wMzAbBgkqhkiG9w0BBQwwDgQIotDUx4iMPI4CAggA\nMBQGCCqGSIb3DQMHBAhZ/C3lsmFbUASCBMgupa4JA2eQKysxsHbLV2MXFgWXek+9\nYpus895vZWyzzUupLDBp8cnMi9L/0BmdGB8E+DKrml51f3LUrnrK74/Pjrz57j0/\noATRuE/tna1H5vbKPJLgkY08DqW5zfls6MBXE4m3r17lXeRW5maijpjxA/qSRc43\n35ksdXeeeQOL/PLrwVdOGq66o9b6NVNrLuskbMF5VsLaHla188KJYe7XyDGxcRCK\nM1ScIhsjBqdT5oeYQbSa9tJxugAkupl2EVJXOTTFR+2uh+prmvIhxZG7GpCcUzbk\nfHeIo0LaLuK0x2FvxDD1M1OfMWs1kLDqR5Pf7sLP3NKYevvuwQzyhOoTEdhsd7/f\nLfSxQobr72bogfjM5TOqwDZyMPRjhN+edO548DLEWtmrt6p8gJ2DPleKEQETSddZ\npOEJxlzX4ewZwooSOnoTenMpa0cr+nohsMC7FfTb9IF2CroEPi63i2MPc63HF5xN\nIloM7O6vw6fiFyKj/vRzZJFaEF7XbssROgW9EOXp5lM232Tb8K3FrtgHeNWc8Wm/\nx50VnqOsrmyhrkXbIo8PtXLC7JKRW5FaF21TDatLdatuubGWLQLq8STB9zDlQSXW\niCiF9lDHrbztac+aTGFlhCWUhIZ2QerSCug9kA5UGuhW1PNWoQu9fIzbbtS2peCW\nhokd7Xhl99uzHTElC0VBefRbwbpIVBzHLJ0aEtBlT6WfUpWOOMUF9mVG+HhSY8Z7\nTTDmEgGNunhMdgaUHtzfRCGo34KXHk9J6ggaTcpq17EDyCdeiBhRJH4g5v7rGazL\nr5CW8CShuIUXsXhI1f+mptN6MWFjmp9lIeXs1Iwh+lbbucTX79WiF5VMfrZO4OtY\nH/n6wrLaaNXSH21ahQk2RGXj/TEeqflt9Cf7pg4WyYXKohu/2IWjfXXbWUtCOWY1\nd92luogEJ7r8XRsZpTtU0oQnMjDWsVxt2/o1ZHzz1KoId1+UD7ztWhxXdJ7CflFj\nWScJR+KtppcBE+8ZuuHmfuoKc7S26E1magqvf5WIJ3FmAEFxFhdEjy3junH20QjV\nNYFpxmwLqx/mLWZJRlmRJ/k/4t3Ee0QifZwdJJgNaVIy41rTq8cEoxpx97faM+GM\n9osWRzO5lZ2O893o9Kf8cSluR40uQD/AedsZKLlGZfkEGNy2zhFlYy1q0jbL9rMD\nVvOmlupimAEYvzP1P3ZDJnu+Phb1B/AwG0WiGI6DpIdOXcniRonpQETsa9rGFtsC\nv7YlH9m3lnWBMQXYhUE4LrT7aS5S+BrLAar/uVDLQPwnHS2zhCZ+j6rjnCMy2GsG\nnQn0H+kWZKAZpLNwt4s1tiofgeG3Yjfokp18EMPwnW24gW09xl+/K6b2Do05nItd\nKUCRSVSNFJUGatNWHda4nHFISOXt+Fl0n2EMYEskwLezEmfQIUM8R7OhrGC5JtwS\nJkv5BQqZVYtVtXmdTTn1AjLxZ3zWuICjdjBGIE0UWl2v1IYrXMqkTV4B6kfSGvW1\nO2oj8scaaOf6dP0yTUTgEN7uL9/6C2Pg0bX2qZvNA0GaeUkNKBsT51FGsURB2JIz\niwxx7+Cz/TPDtpTZrOpvP/49RZV7psQyo7KmUrc2+awt7lKPpy1jS0Rm1e+9+GNs\nDyE=\n-----END ENCRYPTED PRIVATE KEY-----\n",
+                      "passphrase": "c500e4e7033e2a53fb64fabaa31f360a",
+                      "enterprise": "455328"
+                    }
+          },
+          "enterpriseID": "455328"
+  }
