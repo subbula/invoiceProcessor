@@ -20,14 +20,14 @@ var serviceAccountClient = sdk.getAppAuthClient('enterprise', boxConfig.enterpri
 var folder_id="168860931782";
 var processed_folder_id="168945527405";
 
-var adpresponse =[];
+
 
 exports.downloadFileFrmBox = async (input) => {
     console.log("Donwload process starts here ");
+    var adpresponse =[];
        const x = await serviceAccountClient.folders.getItems(folder_id);
-      const y =  await startIteration(x.entries); 
-      return adpresponse;
-           
+      const y =  await startIteration(x.entries,adpresponse); 
+      return adpresponse;         
 
         
 }
@@ -62,7 +62,7 @@ const downloadFile = (fileId) => {
   
     })
   }
-const startIteration = async(array)=>{
+const startIteration = async(array,adpresponse)=>{
     
     for(var num of array){
       const a = await downloadFile(num);
