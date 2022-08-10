@@ -1,4 +1,5 @@
 var boxservice = require('../service/boxservice');
+var actionObj  = require('../actions/action');
 
 class routes {
   constructor(app){
@@ -9,7 +10,7 @@ class routes {
       res.send("ok")
     })
     this.app.get('/download/boxfile',async(req,res)=>{
-   const z = await boxservice.downloadFileFrmBox(req);
+   const z = await actionObj.downloadFileFrmBox(req);
     res.send(z);
     })
   }

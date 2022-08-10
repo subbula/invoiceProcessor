@@ -22,17 +22,7 @@ var processed_folder_id="168945527405";
 
 
 
-exports.downloadFileFrmBox = async (input) => {
-    console.log("Donwload process starts here ");
-    var adpresponse =[];
-       const x = await serviceAccountClient.folders.getItems(folder_id);
-      const y =  await startIteration(x.entries,adpresponse); 
-      return adpresponse;         
-
-        
-}
-
-const downloadFile = (fileId) => {
+exports.downloadFile = (fileId) => {
 
     var fileContentJson = {};
   
@@ -53,7 +43,7 @@ const downloadFile = (fileId) => {
   
                     fileContentJson["$content-type"] = "application/pdf";
                     fileContentJson["$content"] = new Buffer.from(finalData).toString('base64');
-                    fs.writeFileSync('./downloads/invonce.pdf', finalData)
+                    fs.writeFileSync('./downloads/invoice.pdf', finalData)
                     resolve(fileContentJson);
                 })
   
@@ -62,15 +52,17 @@ const downloadFile = (fileId) => {
   
     })
   }
-const startIteration = async(array,adpresponse)=>{
-    
-    for(var num of array){
-      const a = await downloadFile(num);
-      var c = await adpService.invokeADP(a);
-      const d = await serviceAccountClient.files.move(num.id,processed_folder_id);
-      adpresponse.push(c);
-    }
-    // return c;
-    
-  } ;
+
+
+exports.getFileIds = async(input)=>{
+    const folderData = await serviceAccountClient.folders.getItems(folder_id);
+    return folderData;
+
+}  
+
+exports.moveFileIds = async(fileDetails)=>{
+    const moveFolder = await serviceAccountClient.files.move(fileDetails.id,processed_folder_id);
+    return moveFolder;
+
+}  
 
