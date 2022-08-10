@@ -5,7 +5,7 @@ var https = require("https");
 var request = require('request');
 
 // const CONN_URL = "amqp://default_user_9uxk1dNldCy4Jc3bDZJ:VrGXM95Yvyt9IcYQrtGy2-_AlBJB9hYQ@localhost:5671";
-const CONN_URL = "amqp://default_user_cgJHk2Gn5Yu29iNwW0V:n86T02EK6lkPW-pH9hWxBnvx_p8MS_0w@rabbitmq-dev-deploy.dw-cp4ba.svc.cluster.local:5672";
+const CONN_URL = "amqp://default_user_9uxk1dNldCy4Jc3bDZJ:VrGXM95Yvyt9IcYQrtGy2-_AlBJB9hYQ@dev-deploy-rabbitmq.dw-cp4ba.svc.cluster.local:5672";
 // const CONN_URL = "amqp://default_user_7QaEQ8QmNh7yCe-413V:TEON9bWtrXKpdpn8a8y0LPfzc4g1m_F0@rabbitmq-dev-deploy-server-0.dw-cp4ba.svc.cluster.local:5672";
 
 let ch = null;
