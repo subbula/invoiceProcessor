@@ -14,8 +14,9 @@ const startIteration = async(array,adpresponse)=>{
     
     for(var num of array){
       const a = await boxObject.downloadFile(num);
+      var d = await adpService.storeInDB(num);
       var c = await adpService.invokeADP(a,num);
-        qService.publishToQueue(c,num);
+        qService.publishToQueue(c,num,d);
       if(JSON.parse(c).status.code == 202){
          await boxObject.moveFileIds(num);
         

@@ -25,6 +25,23 @@ const getAccessToken = async () =>{
 
 }
 
+exports.storeInDB = async (fileDetails) =>{
+
+  var data ={
+    "fileid": fileDetails.id ,
+    "fileName": fileDetails.name,
+    "processingState": "In-progress",
+    "createdtime": new Date(),
+    "updatedTime": new Date()
+  }
+
+  const authtoken = await axios.post(process.env.dbAPI,data,{httpsAgent:agent,headers:{"Content-Type":"application/json"}})
+
+  return authtoken.data;
+  
+
+}
+
 const connectADP = async (fileContentJson,accesstoken)=>{
   var data ={
     "rejectUnauthorized": false,

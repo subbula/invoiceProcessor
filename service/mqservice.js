@@ -22,12 +22,13 @@ amqp.connect(CONN_URL, function (err, conn) {
    });
 });
 
-exports.publishToQueue = async (adpRes,fileId) => {
+exports.publishToQueue = async (adpRes,fileId,dbdata) => {
         var ADPanalayzerId = JSON.parse(adpRes).result[0].data.analyzerId;
         var msg = {
             'fileId':fileId.id,
             'analayzerId':ADPanalayzerId,
-            'fileName':fileId.name
+            'fileName':fileId.name,
+             "executionid":dbdata.executionid
         }
 		return ch.sendToQueue(process.env.queueName,  Buffer.from(JSON.stringify(msg)),{persistent: true});
  }
@@ -78,7 +79,7 @@ exports.consumerProcess = async()=>{
         console.log(adpJsonRes,"adpJsonRes")
        if(adpJsonRes.data.result[0].data.KeyClassRankedList.length > 0) {
 		ch.ack(msg);
-         console.log(adpJsonRes.data.result[0].data.KeyClassRankedList,"adpJsonRes");
+         console.log(adpJsonRes.data.result[0].data.KeyClassRankedList,"adpJsonRes inside If");
           
             var APDObj = adpJsonRes.data.result[0].data.KeyClassRankedList;
             const vendorEmailObj = APDObj.filter((one)=>{
@@ -120,6 +121,7 @@ exports.consumerProcess = async()=>{
             adsObj['today']=new Date().toISOString().slice(0,10);
             adsObj['fileId']=processIdObj.fileId;
             adsObj['fileName']=processIdObj.fileName;
+            adsObj['executionid']=processIdObj.executionid;
     
             console.log(adsObj,"adsObj");
             let d={
