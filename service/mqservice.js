@@ -22,13 +22,14 @@ amqp.connect(CONN_URL, function (err, conn) {
    });
 });
 
-exports.publishToQueue = async (adpRes,fileId,dbdata) => {
+exports.publishToQueue = async (adpRes,fileId,dbdata,input) => {
         var ADPanalayzerId = JSON.parse(adpRes).result[0].data.analyzerId;
         var msg = {
             'fileId':fileId.id,
             'analayzerId':ADPanalayzerId,
             'fileName':fileId.name,
-             "executionid":dbdata.executionid
+             "executionid":dbdata.executionid,
+             "user_id":input.userId
         }
 		return ch.sendToQueue(process.env.queueName,  Buffer.from(JSON.stringify(msg)),{persistent: true});
  }
@@ -122,6 +123,7 @@ exports.consumerProcess = async()=>{
             adsObj['fileId']=processIdObj.fileId;
             adsObj['fileName']=processIdObj.fileName;
             adsObj['executionid']=processIdObj.executionid;
+            adsObj['user_id']=processIdObj.user_id;
     
             console.log(adsObj,"adsObj");
             let d={

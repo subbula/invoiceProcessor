@@ -10,7 +10,7 @@ class routes {
       res.send("ok")
     })
     this.app.get('/download/boxfile',async(req,res)=>{
-   const z = await actionObj.downloadFileFrmBox(req);
+   const z = await actionObj.downloadFileFrmBox(req.query);
     res.send(z);
     })
   }
