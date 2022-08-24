@@ -4,8 +4,8 @@ const axios = require('axios').default;
 var https = require("https");
 var request = require('request');
 
-const CONN_URL = "amqp://default_user_9uxk1dNldCy4Jc3bDZJ:VrGXM95Yvyt9IcYQrtGy2-_AlBJB9hYQ@localhost:5671";
-// const CONN_URL = "amqp://default_user_9uxk1dNldCy4Jc3bDZJ:VrGXM95Yvyt9IcYQrtGy2-_AlBJB9hYQ@dev-deploy-rabbitmq.dw-cp4ba.svc.cluster.local:5672";
+// const CONN_URL = "amqp://default_user_9uxk1dNldCy4Jc3bDZJ:VrGXM95Yvyt9IcYQrtGy2-_AlBJB9hYQ@localhost:5671";
+const CONN_URL = "amqp://default_user_9uxk1dNldCy4Jc3bDZJ:VrGXM95Yvyt9IcYQrtGy2-_AlBJB9hYQ@dev-deploy-rabbitmq.dw-cp4ba.svc.cluster.local:5672";
 
 
 let ch = null;
