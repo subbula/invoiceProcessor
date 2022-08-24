@@ -58,8 +58,14 @@ exports.downloadFile = (fileId) => {
 
 
 exports.getFileIds = async(input)=>{
-    const folderData = await serviceAccountClient.folders.getItems(input.fileLocation);
-    return folderData;
+    try{
+        const folderData = await serviceAccountClient.folders.getItems(input.fileLocation);
+        return folderData;
+    }
+    catch(err){
+     return err;
+    }
+    
 
 }  
 
