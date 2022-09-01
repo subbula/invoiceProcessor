@@ -31,6 +31,7 @@ exports.publishToQueue = async (adpRes,fileId,dbdata,input) => {
              "executionid":dbdata.executionid,
              "user_id":input.userId
         }
+        console.log("msg while publish into Q",msg);
 		return ch.sendToQueue(process.env.queueName,  Buffer.from(JSON.stringify(msg)),{persistent: true});
  }
 
@@ -73,20 +74,24 @@ exports.consumerProcess = async()=>{
 	ch.consume(process.env.queueName, function (msg) {
 		var processIdRaw =msg.content.toString();
     	var processIdObj = JSON.parse(processIdRaw);
-		console.log('.....',processIdObj);
+		console.log('.....Consumed message from Q....',processIdObj);
 		var url = process.env.adpUrl +"/adp/aca/v1/projects/"+process.env.adpProjectId+"/analyzers/"+processIdObj.analayzerId+"/json";
      axios.get(url,{httpsAgent:agent, headers:{"Authorization":"Bearer " +token}})
        .then((adpJsonRes)=>{
-        console.log(adpJsonRes,"adpJsonRes")
+        // console.log(adpJsonRes,"adpJsonRes")
        if(adpJsonRes.data.result[0].data.KeyClassRankedList.length > 0) {
 		ch.ack(msg);
-         console.log(adpJsonRes.data.result[0].data.KeyClassRankedList,"adpJsonRes inside If");
+        //  console.log(adpJsonRes.data.result[0].data.KeyClassRankedList,"adpJsonRes inside If");
+
+         const emailRegexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
           
             var APDObj = adpJsonRes.data.result[0].data.KeyClassRankedList;
             const vendorEmailObj = APDObj.filter((one)=>{
                 return one.KeyClassName == 'Vendor email'});
-            var vendorEmail = vendorEmailObj[0].KVPRankedList[0].Reserved1 ? vendorEmailObj[0].KVPRankedList[0].Reserved1 :null;  
-    
+            var vendorEmailString = vendorEmailObj[0].KVPRankedList[0].Reserved1 ? (vendorEmailObj[0].KVPRankedList[0].Reserved1 ):null;  
+            
+           var validatingEmail = vendorEmailString ? emailRegexp.test(vendorEmailString) : true;
+           var vendorEmail = (validatingEmail) ? vendorEmailObj[0].KVPRankedList[0].Reserved1: (vendorEmailObj[0].KVPRankedList[1].Reserved1? vendorEmailObj[0].KVPRankedList[1].Reserved1:"");
             const VendorNameObj = APDObj.filter((one)=>{
                 return one.KeyClassName == 'Vendor name'});
             var vendorName = VendorNameObj[0].KVPRankedList[0].Reserved1 ? VendorNameObj[0].KVPRankedList[0].Reserved1 :null;  

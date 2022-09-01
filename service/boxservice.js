@@ -17,10 +17,6 @@ var fs = require('fs');
     
     // Get the service account client, used to create and manage app user accounts
     var serviceAccountClient = sdk.getAppAuthClient('enterprise', boxConfig.enterpriseID);
-    // var folder_id="133707165081";
-    // var folder_id="168860931782";
-    // var processed_folder_id="168945527405";
-// }
 
 
 

@@ -63,11 +63,10 @@ const connectADP = async (fileContentJson,accesstoken)=>{
       }
     });
     var form = req.form();
-    form.append('file', fs.createReadStream('./downloads/invonce.pdf'));
+    form.append('file', fs.createReadStream('./downloads/invoice.pdf'));
     form.append('jsonOptions','ocr,dc,kvp,sn,hr,th,mt,ai,ds,char');
     form.append('responseType','json');
     
-
   })
  
 };
