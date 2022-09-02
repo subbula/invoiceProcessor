@@ -9,20 +9,7 @@ exports.downloadFileFrmBox = async (x,input) => {
         if(x && x.length > 0){
         const y = await startIteration(x,adpresponse,input); 
        }
-       
-      //  var response ={
-      //   "message":"",
-      //   "data":"",
-      //   "statuscode":""
-
-      //  }
-      //  response.message = (x.entries && x.entries != 0 ) ? "Success":(x.entries == 0 ?"Source Folder Doesn't has any file to process":(x.statusCode == 404 ? "source folder is not available & give me correct folder Id":"Failed"));
-      //  response.statuscode = (x.entries && x.entries.length != 0 ) ? 200:(x.entries == 0 ?202:(x.statusCode == 404 ? 404:500));
-      //  response.data = (x.entries && x.entries.length >0) ? JSON.parse(x.entries):"" ;
-      //  response.message = (adpresponse.length && adpresponse.length != 0 ) ? "Success":(x.entries == 0 ?"Source Folder Doesn't has any file to process":(x.statusCode == 404 ? "source folder is not available & give me correct folder Id":"Failed"));
-      //  response.statuscode = (adpresponse.length && adpresponse.length != 0 ) ? 200:(x.entries == 0 ?202:(x.statusCode == 404 ? 404:500));
-      //  response.data = (adpresponse && adpresponse.length >0) ? JSON.parse(adpresponse):"" ;
-      // return response;           
+              
 }
 
 exports.gettingResponse = async(input)=>{
