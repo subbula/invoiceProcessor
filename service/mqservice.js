@@ -4,8 +4,9 @@ const axios = require('axios').default;
 var https = require("https");
 var request = require('request');
 
-// const CONN_URL = "amqp://default_user_9uxk1dNldCy4Jc3bDZJ:VrGXM95Yvyt9IcYQrtGy2-_AlBJB9hYQ@localhost:5671";
-const CONN_URL = "amqp://default_user_9uxk1dNldCy4Jc3bDZJ:VrGXM95Yvyt9IcYQrtGy2-_AlBJB9hYQ@dev-deploy-rabbitmq.dw-cp4ba.svc.cluster.local:5672";
+const CONN_URL = "amqp://default_user_I8FSUhEDFrRZPtfE175:YwUB4xQXqJuScwHCJNi6n2Ff5bILW_Y8@localhost:5671";
+// const CONN_URL = "amqp://default_user_9uxk1dNldCy4Jc3bDZJ:VrGXM95Yvyt9IcYQrtGy2-_AlBJB9hYQ@dev-deploy-rabbitmq.dw-cp4ba.svc.cluster.local:5672";
+// const CONN_URL = "amqp://default_user_I8FSUhEDFrRZPtfE175:YwUB4xQXqJuScwHCJNi6n2Ff5bILW_Y8@rabbitmq-dev-deploy.dw-cp4ba.svc.cluster.local:5672";
 
 var cloudpakurlfrmworkflow ="https://cpd-cp4ba.itzroks-2700075nbq-wuvqz1-4b4a324f027aea19c5cbc0c3275c4656-0000.eu-de.containers.appdomain.cloud";
 var cloudpakurlfrmworkflowtoken = "Y3A0YWRtaW46YURPM2NrekxhdDNjQlFOTVBIQW8=";
