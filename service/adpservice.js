@@ -36,20 +36,10 @@ exports.storeInDB = async (fileDetails,input) =>{
     "userid":input.userId
   }
 
-  // const authtoken = 
-  await axios.post(process.env.dbAPI,data,{httpsAgent:agent,headers:{"Content-Type":"application/json"}})
-  .then((res)=>{
+  const authtoken =   await axios.post(process.env.dbAPI,data,{httpsAgent:agent,headers:{"Content-Type":"application/json"}});
+ 
     
-      return res.data;
-    
-  })
-  .catch((err)=>{
-    console.log(err,"while store data in processInvoices tables");
-    return err;
-  })
-
-  
-  
+      return authtoken.data;
 
 }
 
