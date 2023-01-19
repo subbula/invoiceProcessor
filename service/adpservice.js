@@ -18,7 +18,7 @@ exports.invokeADP = async (files,fileId) =>{
 
 const getAccessToken = async () =>{
 
-    const authtoken = await axios.get(process.env.adpUrl +'/v1/preauth/validateAuth',{httpsAgent:agent, headers:{"Authorization":"Basic " +process.env.adpBasicToken}})
+    const authtoken = await axios.get(process.env.adpUrl +'/v1/preauth/validateAuth',{httpsAgent:agent, headers:{"Authorization":"Basic " +process.env.adpBasicToken}}).catch((err)=>{console.log(err,"Error in getaccesstoken fun")})
 
     return authtoken.data.accessToken;
     
@@ -33,10 +33,11 @@ exports.storeInDB = async (fileDetails,input) =>{
     "processingState": "In-progress",
     "createdtime": new Date(),
     "updatedTime": new Date(),
-    "userid":input.userId
+    "userid": input.userId,
+    "email":input.email?input.email:""
   }
 
-  const authtoken =   await axios.post(process.env.dbAPI,data,{httpsAgent:agent,headers:{"Content-Type":"application/json"}});
+  const authtoken =   await axios.post(process.env.dbAPI,data,{httpsAgent:agent,headers:{"Content-Type":"application/json"}}).catch((err)=>{console.log(err,"Error in storeIn db fun")});
  
     
       return authtoken.data;

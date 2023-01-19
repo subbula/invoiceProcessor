@@ -1,85 +1,32 @@
-var BoxSDK = require('box-node-sdk');
-const { callbackify } = require('util');
-var boxConfig = require('./bikram_box_config.json');
-var adpService = require('./service/adpservice');
-var fs = require('fs');
-// var down=require('./downloads')
+// var nodemailer = require('nodemailer');
 
-var sdk = new BoxSDK({
-    clientID: process.env.clientId || boxConfig.boxAppSettings.clientID,
-    clientSecret: process.env.clientSecret || boxConfig.boxAppSettings.clientSecret,
-    appAuth: {
-        keyID:  boxConfig.boxAppSettings.appAuth.publicKeyID,
-        privateKey: boxConfig.boxAppSettings.appAuth.privateKey,
-        passphrase:  boxConfig.boxAppSettings.appAuth.passphrase,
-        enterprise:  boxConfig.enterpriseID
-    }
-});
+// const transporter = nodemailer.createTransport({
+//     host: 'smtp.office365.com',
+//     port: 587,
+//     auth: {
+//         user: '[subbulakshmi.r@ibm.com]',
+//         pass: '[KuttyVihanna@123]'
+//     }
+// });
 
-// Get the service account client, used to create and manage app user accounts
-var serviceAccountClient = sdk.getAppAuthClient('enterprise', boxConfig.enterpriseID);
+// // send email
+// const sendMsg = async() => {
+//   await transporter.sendMail({
+//     from: 'subbulakshmi.r@ibm.com',
+//     to: 'subbulakshmi.r@ibm.com',
+//     subject: 'Test Email Subject',
+//     html: '<h1>Example HTML Message Body</h1>'
+// });
+// }
+
+// sendMsg();
 
 
-const downloadFile = (fileId) => {
-
-  var fileContentJson = {};
-
-  return new Promise((resolve, reject) => {
-
-      serviceAccountClient.files.getReadStream(fileId, null)
-          .then(stream => {
-
-              var finalData = '';
-              var bufs = [];
-
-              stream.on("data", (chunk) => {
-                  bufs.push(chunk);
-              });
-
-              stream.on("end", () => {
-                  finalData = Buffer.concat(bufs)
-
-                  fileContentJson["$content-type"] = "application/pdf";
-                  fileContentJson["$content"] = new Buffer.from(finalData).toString('base64');
-
-                  resolve(fileContentJson);
-              })
-
-          })
-          .catch(error => reject(error));
-
-  })
+function filterNumbersFromArray(arr) {
+      // Write the code that goes here
+      arr.forEach((one) => { return isNaN (one) })
 }
 
-var array =[1,2];
-  const startIteration = async(array)=>{
-    for(var num of array){
-      const a = await downloadFile('992165652628');
-      // const b = await binary2pdfConversion(a);
-      const c = await adpService.invokeADP(a);
-    }
-  } ;
-
-  // const binary2pdfConversion = async(stream) =>{
-  //   var fileContentJson =[];
-  //   var finalData = '';
-  //           var bufs = [];
-      
-  //           await stream.on("data", async(chunk) => {
-  //               bufs.push(chunk);
-  //           });
-      
-  //           await stream.on("end", () => {
-  //               finalData = Buffer.concat(bufs)
-      
-  //               fileContentJson["$content-type"] = "application/pdf";
-  //               fileContentJson["$content"] = new Buffer.from(finalData).toString('base64');
-  //               return fileContentJson;
-       
-  //         })
-   
-  //   // var output =  fs.createWriteStream('./downloads/file1.pdf');
-	//   // stream.pipe(output)
-  // }
-
-  startIteration(array);
+var arr = [1, 'a', 'b', 2];
+filterNumbersFromArray(arr);
+console.log(arr);

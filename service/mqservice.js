@@ -4,8 +4,8 @@ const axios = require('axios').default;
 var https = require("https");
 var request = require('request');
 
-// const CONN_URL = "amqp://default_user_GDFEtJnxWPCWR26MaVd:_Vnq2KDhelk9zQ6cGZH1nomfjYQcKvu2@localhost:5671";
-const CONN_URL = "amqp://default_user_GDFEtJnxWPCWR26MaVd:_Vnq2KDhelk9zQ6cGZH1nomfjYQcKvu2@rabbitmq-dev-deploy.dw-cp4ba.svc.cluster.local:5672";
+// const CONN_URL = "amqp://default_user_vl8Spm5M92TJK76YHNW:4aNdCEkC7lQdquxmpq5XnXtTvyrB8FWB@localhost:5671";
+const CONN_URL = "amqp://default_user_vl8Spm5M92TJK76YHNW:4aNdCEkC7lQdquxmpq5XnXtTvyrB8FWB@rabbitmq-dev-deploy.dw-cp4ba.svc.cluster.local:5672";
 
 var cloudpakurlfrmworkflow ="https://cpd-cp4ba.itzroks-2700075nbq-wuvqz1-4b4a324f027aea19c5cbc0c3275c4656-0000.eu-de.containers.appdomain.cloud";
 var cloudpakurlfrmworkflowtoken = "Y3A0YWRtaW46YURPM2NrekxhdDNjQlFOTVBIQW8=";
@@ -34,7 +34,8 @@ exports.publishToQueue = async (adpRes,fileId,dbdata,input) => {
              "user_id":input.userId,
              "cloudpakurl":input.cloudpakurl,
              "cloudpakurltoken":input.cloudpakurltoken,
-             "workflowToken":workflowToken
+            "workflowToken": workflowToken,
+             "email":input.email?input.email:"",
         }
        
         console.log("msg while publish into Q",msg);
@@ -136,7 +137,8 @@ exports.consumerProcess = async()=>{
             adsObj['fileId']=processIdObj.fileId;
             adsObj['fileName']=processIdObj.fileName;
             adsObj['executionid']=processIdObj.executionid;
-            adsObj['user_id']=processIdObj.user_id;
+           adsObj['user_id'] = processIdObj.user_id;
+           adsObj['email']=processIdObj.email?processIdObj.email:"";
     
             console.log(adsObj,"adsObj");
             let d={
